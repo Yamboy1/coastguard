@@ -17,7 +17,7 @@ prompting for login, and when a new rank is acheived, the client can notify the 
 will then notify MLN that the given user achieved the given rank, and MLN can reward the user with
 badges and send other messages while the user continues to play.
 
-Authenticity is guaranteed because: 
+Authenticity is guaranteed because:
 
 - the client never gets the user's MLN credentials
 - the server has a secret key that is used when communicating to MLN but is **not** sent to the client
@@ -26,7 +26,7 @@ This process is very similar to OAuth, in the sense that the client only communi
 
 Here's how that process looks like[^1]
 
-![A Sequence diagram showing how MLN can be integrated](./mln-integration.png)
+![A Sequence diagram showing how MLN can be integrated](./mln-docs/mln-integration.png)
 
 ## MLN API Endpoints
 
