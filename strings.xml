@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<texts>
+<!--  GUI  -->
+	<fuel>fuel</fuel>
+	<required>required</required>
+	<seats>seats</seats>
+	<rescued>rescued</rescued>
+	<wind>wind</wind>
+	<continue>CONTINUE</continue>
+	<back>GO BACK</back>
+	<of>of</of>
+	<great>great!</great>
+	<nice>nice!</nice>
+	<fantastic>fantastic!</fantastic>
+	<timerlabel>time</timerlabel>
+	<pausebtn>pause</pausebtn>
+	<pausetitle>pause</pausetitle>
+	<musicon>sounds off</musicon>
+	<musicoff>sounds on</musicoff>
+	<backtogame>Back to game</backtogame>
+	<exittomenu>Exit to missions</exittomenu>
+	<continueplaying>Continue playing</continueplaying>
+	<gonextlevel>Go to next level</gonextlevel>
+	<rescuemoretitleline1>You have rescued all swimmers</rescuemoretitleline1>
+	<rescuemoretitleline2>but you can go for more!</rescuemoretitleline2>
+	<tryagain>Try again</tryagain>
+	<gameoverline1>GAME OVER</gameoverline1>
+	<gameoverline2>You couldn't rescue all the swimmers needed</gameoverline2>
+	
+<!-- POP UP TEXTS-->
+	<fixed1>You've fixed the boat</fixed1>
+	<fixed2>You've fixed the fourtrax</fixed2>
+	<fixed3>You've fixed the buoy</fixed3>
+	<fixed4>You've fixed the dam</fixed4>
+	
+	<secmissionaccomplished>Great! Second mission completed!</secmissionaccomplished>
+
+	<helicopterfulltitle>The helicopter is full!</helicopterfulltitle>
+	<helicopterfulltext>Go back to base and come back to rescue more swimmers!</helicopterfulltext>
+
+	<outoffueltitle>Out of fuel!</outoffueltitle>
+	<outoffueltext>Return to base!</outoffueltext>
+	
+	<minigamepopuptitle>Frenzy rescue!</minigamepopuptitle>	
+	
+	<tutorial1title>CONTROLS</tutorial1title>
+	<tutorial1textline1>Use your mouse to move the helicopter.</tutorial1textline1>
+	<tutorial1textline2>Fly and search for swimmers!</tutorial1textline2>
+
+	<tutorial2title>THE WINCH</tutorial2title>
+	<tutorial2textline1>Click your left button to lower the winch.</tutorial2textline1>
+	<tutorial2textline2></tutorial2textline2>
+	
+	<tutorial3title>PICKING UP SWIMMERS</tutorial3title>
+	<tutorial3textline1>Touch a swimmer with the winch,</tutorial3textline1>
+	<tutorial3textline2>then click to pick him up.</tutorial3textline2>
+
+	<tutorial4title>CONTINUE RESCUING</tutorial4title>
+	<tutorial4textline1>Search everywhere until you find all swimmers.</tutorial4textline1>
+	<tutorial4textline2></tutorial4textline2>
+
+	<tutorial5title>BACK TO BASE</tutorial5title>
+	<tutorial5textline1>You've rescued all swimmers. Take them back to our base.</tutorial5textline1>
+	<tutorial5textline2></tutorial5textline2>
+
+	<tutorial6title></tutorial6title>
+	<tutorial6textline1></tutorial6textline1>
+	<tutorial6textline2></tutorial6textline2>
+	
+<!-- SPLASH  -->
+	<playthegame>PLAY THE GAME</playthegame>
+	<instructions>INSTRUCTIONS</instructions>
+
+<!-- SIGNIN  -->
+	<signintitle>SIGN IN FOR A BETTER EXPERIENCE</signintitle>
+	<signinLine1>• Save your progress!</signinLine1>
+	<signinLine2>• Win badges!</signinLine2>
+	<signinLine3>• Create your own My Lego Network webpage!</signinLine3>
+	<signinLine4>• Share your medals with your friends!</signinLine4>
+	<signinLine5></signinLine5>
+	<signinbutton>SIGN IN</signinbutton>
+	<nothanks>NO THANKS</nothanks>
+	
+<!--  SELECT MISSION -->
+
+	<selectmission>SELECT YOUR MISSION</selectmission>
+	<currentrankline1>Your current rank:</currentrankline1>
+	<currentrankline2></currentrankline2>
+	<points>points to become a:</points>
+	<tobecome></tobecome>
+	<yourtotalscore>TOTAL SCORE:</yourtotalscore>
+	<pointpt>pt</pointpt>
+	<score>Score</score>
+	<newbutton>NEW</newbutton>
+	<lockedbutton>LOCKED</lockedbutton>
+
+<!--  WELCOME  -->
+	
+	<welcomeTitle>WELCOME to the Coast Guard!</welcomeTitle>
+	<welcometxtLine1>
+		Hi! I'm the master chief and I'm your instructor in the Coast Guard academy.
+	</welcometxtLine1>
+	<welcometxtLine2>
+ 		I'll teach you everything you need to become a great helicopter pilot and a rescue hero. Are you ready?
+	</welcometxtLine2>
+	<welcometxtLine3>
+	</welcometxtLine3>
+	<welcometxtLine4>
+	</welcometxtLine4>
+	<welcometxtLine5>
+	</welcometxtLine5> 
+
+<!--  BRIEFING  -->
+
+	<mission>Mission</mission>
+
+	<!--  BRIEFING  1 -->
+		<briefing1txtLine1>
+			This is your first mission. Some swimmers got too far from the shore and now they can't get back. Fly the helicopter and bring them back to our base.
+		</briefing1txtLine1>
+		<briefing1txtLine2>
+			You must rescue %castaways% swimmers to complete your mission.
+		</briefing1txtLine2>
+		<briefing1txtLine3>
+			Be careful with the birds!
+		</briefing1txtLine3>
+		<briefing1txtLine4>
+		</briefing1txtLine4>
+		<briefing1txtLine5>
+		</briefing1txtLine5>
+		
+	<!--  BRIEFING  2 -->
+		<briefing2txtLine1>
+			Great Job! You have to rescue more swimmers. You only need to rescue  %castaways% swimmers to complete the level.  		</briefing2txtLine1>
+		<briefing2txtLine2>
+			If you rescue all swimmers you'll receive a special medal.
+		</briefing2txtLine2>
+		<briefing2txtLine3>
+		</briefing2txtLine3>
+		<briefing2txtLine4>
+		</briefing2txtLine4>
+		<briefing2txtLine5>
+		</briefing2txtLine5>
+
+	<!--  BRIEFING  3 -->
+		<briefing3txtLine1>
+			Now you must rescue %castaways% swimmers. But remember you can win a medal if you rescue all swimmers!
+		</briefing3txtLine1>
+		<briefing3txtLine2>
+			And there is one more job for you! A buoy is broken and needs to be fixed. Find the pieces and put them together. 
+		</briefing3txtLine2>
+		<briefing3txtLine3>
+		</briefing3txtLine3>
+		<briefing3txtLine4>
+		</briefing3txtLine4>
+		<briefing3txtLine5>
+		</briefing3txtLine5>
+
+	<!--  BRIEFING  4 -->
+		<briefing4txtLine1>
+			Nice job %rank%! You are doing great! Sunset is coming and you still have to rescue %castaways% swimmers. Psst … the lifesaver can help you with this job! 
+		</briefing4txtLine1>
+		<briefing4txtLine2>
+			And there is a boat that needs your help too.
+		</briefing4txtLine2>
+		<briefing4txtLine3>
+			Be careful! Remember, hitting sharks and birds will make you lose fuel.
+		</briefing4txtLine3>
+		<briefing4txtLine4>
+		</briefing4txtLine4>
+		<briefing4txtLine5>
+		</briefing4txtLine5>
+
+	<!--  BRIEFING  5 -->
+		<briefing5txtLine1>
+			It's getting harder now! This time you have 2 extra rescue jobs. If you complete them you win a medal!
+		</briefing5txtLine1>
+		<briefing5txtLine2>
+			And you have to rescue %castaways% swimmers. If you rescue all swimmers, you will earn a medal. Psst … If you repair the boat, you can place three swimmers there, and another one on the buoy.
+		</briefing5txtLine2>
+		<briefing5txtLine3>
+		</briefing5txtLine3>
+		<briefing5txtLine4>
+		</briefing5txtLine4>
+		<briefing5txtLine5>
+		</briefing5txtLine5>
+
+	<!--  BRIEFING  6 -->
+		<briefing6txtLine1>
+			Attention %rank%! One of our Coast Guard bikes is broken and needs to be fixed. Fly off shore, find it and repair it. 
+		</briefing6txtLine1>
+		<briefing6txtLine2>
+			Rescue at least %castaways% swimmers and complete all the other jobs you find!
+		</briefing6txtLine2>
+		<briefing6txtLine3>
+			Go ahead!
+		</briefing6txtLine3>
+		<briefing6txtLine4>
+		</briefing6txtLine4>
+		<briefing6txtLine5>
+		</briefing6txtLine5>
+
+	<!--  BRIEFING  7 -->
+		<briefing7txtLine1>
+			It's time for team work! Repair the boat and bike, and remember to rescue at least %castaways% swimmers. 
+		</briefing7txtLine1>
+		<briefing7txtLine2>
+			Check the wind. Sometimes it helps you, sometimes it makes things harder!
+		</briefing7txtLine2>
+		<briefing7txtLine3>
+			Psst … if you repair the bike, you can place a swimmer there!
+		</briefing7txtLine3>
+		<briefing7txtLine4>
+		</briefing7txtLine4>
+		<briefing7txtLine5>
+		</briefing7txtLine5>
+
+	<!--  BRIEFING  8 -->
+		<briefing8txtLine1>
+			Let's get ready for night action! The sun is gone but the Coast Guard must continue!
+		</briefing8txtLine1>
+		<briefing8txtLine2>
+			You must rescue at least %castaways% swimmers. 
+		</briefing8txtLine2>
+		<briefing8txtLine3>
+			Complete as many jobs as you can find to win extra medals.
+		</briefing8txtLine3>
+		<briefing8txtLine4>
+		</briefing8txtLine4>
+		<briefing8txtLine5>
+		</briefing8txtLine5>
+
+	<!--  BRIEFING  9 -->
+		<briefing9txtLine1>
+			You must be really skilled to complete this level. A boat, a bike and a buoy need repair, and you must rescue at least %castaways% swimmers. 
+		</briefing9txtLine1>
+		<briefing9txtLine2>
+			And remember… you can fix the boat with a full helicopter!
+		</briefing9txtLine2>
+		<briefing9txtLine3>
+		</briefing9txtLine3>
+		<briefing9txtLine4>
+		</briefing9txtLine4>
+		<briefing9txtLine5>
+		</briefing9txtLine5>
+
+	<!--  BRIEFING  10 -->
+		<briefing10txtLine1>
+			The wind is getting harder! The dam is broken and at least %castaways% swimmers need your help.
+		</briefing10txtLine1>
+		<briefing10txtLine2>
+			Go ahead %rank%! Rescue all of them and fix all the broken material to win extra medals!
+		</briefing10txtLine2>
+		<briefing10txtLine3>
+		</briefing10txtLine3>
+		<briefing10txtLine4>
+		</briefing10txtLine4>
+		<briefing10txtLine5>
+		</briefing10txtLine5>
+
+	<!--  BRIEFING  11 -->
+		<briefing11txtLine1>
+			Great %rank%! You have proven that you are brave enough to be with the Coast Guard! 
+		</briefing11txtLine1>
+		<briefing11txtLine2>
+			Make good use of your fuel in this mission to rescue %castaways% swimmers and repair the equipment.
+		</briefing11txtLine2>
+		<briefing11txtLine3>
+			Soon you will be a true hero!
+		</briefing11txtLine3>
+		<briefing11txtLine4>
+		</briefing11txtLine4>
+		<briefing11txtLine5>
+		</briefing11txtLine5>
+
+	<!--  BRIEFING  12 -->
+		<briefing12txtLine1>
+			MAY DAY! MAY DAY! The wind is really strong now! And at least %castaways% swimmers need to be rescued.
+		</briefing12txtLine1>
+		<briefing12txtLine2>
+			Use everything you've learned to complete your mission!  
+		</briefing12txtLine2>
+		<briefing12txtLine3>
+			This is your final mission %rank%!. I'm proud of you! Good luck! I'm very proud of you! Good luck!
+		</briefing12txtLine3>
+		<briefing12txtLine4>
+		</briefing12txtLine4>
+		<briefing12txtLine5>
+		</briefing12txtLine5>
+
+<!--  GAME COMPLETE  -->
+	<gamecompletetitleline1>CONGRATULATIONS!</gamecompletetitleline1> 
+	<gamecompletetitleline2>YOU HAVE COMPLETED ALL MISSIONS!</gamecompletetitleline2> 
+
+	<gamecompleteline1>You are a hero! Now keep playing to improve your score or your rank. Earn medals in all levels and make perfect scores!</gamecompleteline1>
+	<gamecompleteline2></gamecompleteline2>
+	<gamecompleteline3></gamecompleteline3>
+	<gamecompleteline4></gamecompleteline4>
+	<gamecompleteline5></gamecompleteline5>
+	<gamecompleteline6></gamecompleteline6>
+	
+	
+<!--  RESULTS  -->
+	<greatline1>GREAT! YOU COMPLETED THE MISSION</greatline1>
+	<greatline2></greatline2>
+	<greatline3></greatline3>
+	<missioncompleted>Mission completed</missioncompleted>
+	<castawasrescuedlabel>People rescued</castawasrescuedlabel>
+	<castawasrescuedperfectline1>All people rescued!</castawasrescuedperfectline1>
+	<castawasrescuedperfectline2>Medal earned!</castawasrescuedperfectline2>
+	<secondaryobjectives>Second mission</secondaryobjectives>
+	<secondaryobjectivesperfectline1>All second missions!</secondaryobjectivesperfectline1>
+	<secondaryobjectivesperfectline2>Medal earned!</secondaryobjectivesperfectline2>
+
+<!--  INSTRUCTIONS -->
+	<btplaygame>play the game</btplaygame>
+
+
+	<instructtitle>INSTRUCTIONS</instructtitle>
+	<moveline1>FLY & EXPLORE</moveline1>
+	<moveline2></moveline2>
+	<moveline3>Use your mouse to move the helicopter. Fly around to explore the different levels</moveline3>
+	<moveline4></moveline4>
+	<moveline5></moveline5>
+	<clickline1>RESCUE</clickline1>
+	<clickline2></clickline2>
+	<clickline3>Click to lower the winch. Touch a swimmer with the winch, and click to lift him up.</clickline3>
+	<clickline4></clickline4>
+	<clickline5></clickline5>
+
+	<carryline1>SEATS</carryline1>
+	<carryline2></carryline2>
+	<carryline3>You can only carry 4 passengers at a time.</carryline3>
+	<carryline4>Check for seats available.</carryline4>
+	<carryline5></carryline5>
+	<heliportline1>BASE</heliportline1>
+	<heliportline2></heliportline2>
+	<heliportline3>Rescue passengers by taking them back to the base.</heliportline3>
+	<heliportline4></heliportline4>
+	<heliportline5></heliportline5>
+	<fuelline1>ENERGY</fuelline1>
+	<fuelline2></fuelline2>
+	<fuelline3>Control your fuel!</fuelline3>
+	<fuelline4>Find cans to refuel.</fuelline4>
+	<fuelline5>The game ends if you run out of fuel.</fuelline5>
+
+	<obstaclesline1>DANGER!</obstaclesline1>
+	<obstaclesline2></obstaclesline2>
+	<obstaclesline3>Avoid birds and sharks. When you hit them you loose fuel.</obstaclesline3>
+	<obstaclesline4></obstaclesline4>
+	<obstaclesline5></obstaclesline5>
+	<launchline1>EXTRA SEATS</launchline1>
+	<launchline2></launchline2>
+	<launchline3>Repair the boat, the buoy and the bike. You can place some extra swimmers there!</launchline3>
+	<launchline4></launchline4>
+	<launchline5></launchline5>
+	<structline1>BUILD!</structline1>
+	<structline2></structline2>
+	<structline3>Find the pieces, add them in the correct place, </structline3>
+	<structline4>and win medals for more missions!</structline4>
+	<structline5></structline5>
+	
+<!--  SCORE TO ACHIEVE PER RANK  -->
+
+	<rank0>0</rank0>
+	<rank1>15000</rank1>
+	<rank2>45000</rank2>
+	<rank3>120000</rank3>
+	<rank4>200000</rank4>
+	<rank5>300000</rank5>
+	
+	<rank0name>No rank</rank0name>
+	<rank1name>Private</rank1name>
+	<rank2name>Lieutenant</rank2name>
+	<rank3name>Commander</rank3name>
+	<rank4name>Captain</rank4name>
+	<rank5name>Admiral</rank5name>
+	
+<!--  GET BADGE POPUP -->
+	<textgetbadge1>Congratulations! You've earned a badge in My LEGO Network! Go to you’re MyLEGO Network page, get the badge and tell your friends!</textgetbadge1>
+
+	<textgetbadge2>Congratulations - you won the rank 2 award! Go to your MyLEGO Network page and hurry up and build it!</textgetbadge2>
+
+	<textgetbadge3>Hay, you are getting good! Almost as good as me now! Build the badge and get back to the game and earn more points!</textgetbadge3>
+
+	<textgetbadge4>Hey champ, I never imagined that you would make such a great Coast Guard crew member! Fast – build the badge and try to get the final one!</textgetbadge4>
+
+	<textgetbadge5>WOW! You made it to the top! Admiral is the highest rank within the Coast Guard! Build it and show it to all your friends!.</textgetbadge5>
+	
+	<getbadge>GET BADGE</getbadge>
+	<nogetbadge>LATER!</nogetbadge>
+	
+<!--  CASTAWAYS TO RESCUE PER LEVEL -->
+	<level1>4</level1>
+	<level2>4</level2>
+	<level3>6</level3>
+	<level4>7</level4>
+	<level5>9</level5>
+	<level6>10</level6>
+	<level7>12</level7>
+	<level8>14</level8>
+	<level9>18</level9>
+	<level10>20</level10>
+	<level11>25</level11>
+	<level12>30</level12>
+
+<!-- POINTS AND DAMAGE -->
+	<obstaclesDamage>4</obstaclesDamage>
+	<pointsMissionAccomplished>10000</pointsMissionAccomplished>
+	<pointsCastawayRescued>1000</pointsCastawayRescued>
+	<pointsSecondaryMission>5000</pointsSecondaryMission>
+	<pointsCastawaysMedal>1000</pointsCastawaysMedal>
+	<pointsSecondaryMissionMedal>1000</pointsSecondaryMissionMedal>
+	<pointsMinigameCastaways>500</pointsMinigameCastaways>
+	<levelsunlocked>12</levelsunlocked>
+	<fadevelocity>4</fadevelocity>
+	
+	<cheatmode>1</cheatmode>
+	<cheatstring>sailor</cheatstring>
+	
+	<legowebsiteurl></legowebsiteurl>
+	<loginurl></loginurl>
+	<getbadgeurl></getbadgeurl>
+	
+	
+</texts>
