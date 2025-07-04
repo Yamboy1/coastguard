@@ -1,9 +1,3 @@
-import cgi
-import cgitb
-cgitb.enable(display=0, logdir="./logs")
-
-import base64
-
 class Crypt:
     """
     A Python class that replicates the functionality of the provided ActionScript Crypt class.
@@ -141,38 +135,3 @@ class Crypt:
                 string.append(chr(c1 | c2 | c3 | c4))
                 i += 4
         return "".join(string)
-
-form = cgi.FieldStorage()
-
-
-
-request = """Content-type: application/xml"""
-
-body = """
-<root>
-    <username>Blah Blah Blah</username>
-    <token>Test</token>
-    <data>
-        <mylegobadge>1</mylegobadge>
-        <level levelnumber="1">
-            <score>15000</score>
-            <medals>1</medals>
-        </level>
-        <totalscore>0</totalscore>
-        <currentrank>1</currentrank>
-        <levelsunlocked>0</levelsunlocked>
-        <loginurl></loginurl>
-        <legowebsiteurl></legowebsiteurl>
-        <getbadgeurl></getbadgeurl>
-    </data>
-</root>
-"""
-
-basic_body = '<root><data><legowebsiteurl></legowebsiteurl><loginurl></loginurl><getbadgeurl></getbadgeurl></data></root>'
-
-
-print(request)
-print()
-print('<?xml version="1.0" encoding="utf-8"?>')
-# print('<string xmlns="http://www.lego.com/Services.HiScore/service">f0ZeKkdhUlNAUygjWkgJEHtQWUEGXyNeNwNAVDAmEmMpUTZRLFAMZ1QkQV5EWC03RUFHEAYFSVkxUXwRLyFSWjUnUjAtQCdMMVgPLUc1RQgCGSUrQ1QaXl1eQhYmXy8CEzZaUTchRDBrdy1YMEB2MFIzUR1pUyAjQkFAHFlKXUB5Hy5IJCtCUCAxWTchQTBVfQhdKlQoW0dfWngqQ1lEQQIWAlkmUy1YLTAbWSclX20nWy8WEF1WK1ovG1NeRj59ZUhAR0pXeEopDSpZNzQPGm0hWTc9Gi5cJFsfJlwsGlVMWyMxGE5bU0tNSk0kQiYDIjdFTX5tXCwjXSxMMVgPeVQkQVBMUiEnQl9YDFBNWUh/H21ALyobWSclX20nWy8FbFNUMVEgUVVIQzQuCREbVllNTAZ5HzBCLDAL</string>')
-print(f'<string xmlns="http://www.lego.com/Services.HiScore/service">{Crypt.f_encrypt(body, Crypt.S_ENCRYPTION_KEY1)}</string>')
