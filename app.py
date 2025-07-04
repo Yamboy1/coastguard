@@ -41,6 +41,8 @@ def config():
 def strings():
     return app.send_static_file("strings.xml")
 
+@app.route("/index.html")
+@app.route("/")
 @app.route("/Launcher.html")
 def launcher():
     return app.send_static_file("Launcher.html")
