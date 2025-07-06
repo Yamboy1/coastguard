@@ -1,3 +1,4 @@
+import xml.etree.ElementTree as ET
 from flask import Flask, request, redirect
 
 from lego_crypt import Crypt
@@ -5,10 +6,9 @@ import mln
 
 app = Flask(__name__)
 
-def generate_body(session_id, username): return f"""
-<root>
-    <username>{'' if username is None else username}</username>
-    <token>Test</token>
+def generate_body(session_id, username):
+    first_line = "<root>"
+    rest = f"""<token>Test</token>
     <data>
         <mylegobadge>1</mylegobadge>
         <level levelnumber="1">
@@ -24,14 +24,27 @@ def generate_body(session_id, username): return f"""
     </data>
 </root>
 """
+    username_tag =f"<username>{username}</username>"
+
+    if username:
+        return f"{first_line}\n{username_tag}\n{rest}"
+    else:
+        return f"{first_line}\n{rest}"
 
 def encrypt_body(body):
     return Crypt.f_encrypt(body, Crypt.S_ENCRYPTION_KEY1)
 
 @app.route("/InfoRequest.xml", methods=["POST"])
 def info_request():
+    request_body = Crypt.f_decrypt(request.form["_Body"])
     session_id = request.cookies.get("sessionid")
     username = mln.SESSION_TO_USERNAME.get(session_id)
+    root = ET.fromstring(request_body)
+    method = root.attrib["method"]
+    if method == "savescore" and username is not None:
+        data = root.find("data")
+        rank = int(data.find("currentrank").text)
+        mln.submit_rank(username, rank)
     body = generate_body(session_id, username)
     encrypted_body = encrypt_body(body)
     return (f'''
