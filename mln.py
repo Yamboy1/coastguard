@@ -12,7 +12,8 @@ MLN_MAILBOX_URL = f"{MLN_BASE_URL}/mln/private_view/default"
 MLN_API_RANK = "/api/coastguard/rank"  # see mln-docs/mln.md
 MLN_API_OAUTH = "/oauth/token"
 
-SESSION_TO_TOKEN = {}
+_SESSION_TO_TOKEN = {}
+SESSION_TO_USERNAME = {}
 
 def get_login_url(session_id):
   query_string = urlencode({
@@ -32,15 +33,16 @@ def on_login(session_id, auth_code):
   response = requests.post(url, json=body)
   if not response: return
   access_token = response.json()["access_token"]
-  print(f"Got access token! {access_token}")
-  SESSION_TO_TOKEN[session_id] = access_token
+  username = response.json()["username"]
+  _SESSION_TO_TOKEN[session_id] = access_token
+  SESSION_TO_USERNAME[session_id] = username
 
-def submit_rank(username, rank):
+def submit_rank(session_id, rank):
+  access_token = _SESSION_TO_TOKEN[session_id]
   body = {
     "api_token": MLN_API_TOKEN,
-    "username": username,
+    "access_token": access_token,
     "rank": rank,
   }
   url = f"{MLN_BASE_URL}{MLN_API_RANK}"
   response = requests.post(url, json=body)
-  print(f"Submitted rank {rank} for {username}. Got response: {response.status_code}, {response.text}")

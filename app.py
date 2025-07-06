@@ -47,13 +47,13 @@ def info_request():
     # Check if scores need to be sent to MLN
     request_body = Crypt.f_decrypt(request.form["_Body"])
     root = ET.fromstring(request_body)
-    username = mln.SESSION_TO_TOKEN.get(session_id)
+    username = mln.SESSION_TO_USERNAME.get(session_id)
     method = root.attrib["method"]
 
     if method == "savescore" and username is not None:
         data = root.find("data")
         rank = int(data.find("currentrank").text)
-        mln.submit_rank(username, rank)
+        mln.submit_rank(session_id, rank)
 
     body = generate_body(session_id, username)
     encrypted_body = encrypt_body(body)
