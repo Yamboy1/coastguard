@@ -36,9 +36,9 @@ Here's how that process looks like[^1]
 
 ```json
 {
-    secret: string,
-    username: string,
-    rank: int,  // must be between 1 and 5, inclusive
+    "api_token": string,
+    "username": string,
+    "rank": int,  // must be between 1 and 5, inclusive
 }
 ```
 
