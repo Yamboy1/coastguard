@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, make_response
+import uuid
 
 from lego_crypt import Crypt
 import mln
@@ -8,7 +9,7 @@ app = Flask(__name__)
 
 def generate_body(session_id, username):
     first_line = "<root>"
-    rest = f"""<token>Test</token>
+    rest = f"""<token>{session_id}</token>
     <data>
         <mylegobadge>1</mylegobadge>
         <level levelnumber="1">
@@ -36,15 +37,24 @@ def encrypt_body(body):
 
 @app.route("/InfoRequest.xml", methods=["POST"])
 def info_request():
+    # All requests must have the session_id cookie
+    session_id = request.cookies.get("session_id")
+    if session_id is None:
+        res = make_response()
+        res.set_cookie("session_id", value=str(uuid.uuid4()))
+        return res
+
+    # Check if scores need to be sent to MLN
     request_body = Crypt.f_decrypt(request.form["_Body"])
-    session_id = request.cookies.get("sessionid")
-    username = mln.SESSION_TO_USERNAME.get(session_id)
     root = ET.fromstring(request_body)
+    username = mln.SESSION_TO_TOKEN.get(session_id)
     method = root.attrib["method"]
+
     if method == "savescore" and username is not None:
         data = root.find("data")
         rank = int(data.find("currentrank").text)
         mln.submit_rank(username, rank)
+
     body = generate_body(session_id, username)
     encrypted_body = encrypt_body(body)
     return (f'''
@@ -73,6 +83,10 @@ def legocoastguards():
 @app.route("/loader.swf")
 def loader():
     return app.send_static_file("loader.swf")
+
+@app.route("/icon")
+def icon():
+    return app.send_static_file("icon.png")
 
 @app.route("/api/login")
 def on_mln_login():
