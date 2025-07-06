@@ -7,7 +7,7 @@ COAST_GUARD_URL = "http://localhost:5000"
 MLN_BASE_URL = "https://mln.lcdruniverse.org"
 # MLN_BASE_URL = "http://localhost:8000"
 MLN_MAILBOX_URL = f"{MLN_BASE_URL}/mln/private_view/default"
-MLN_API_LOGIN = "/api/coastguard/login"  # see mln-docs/mln.md
+MLN_API_RANK = "/api/coastguard/rank"  # see mln-docs/mln.md
 
 SESSION_TO_USERNAME = {}
 
@@ -24,3 +24,13 @@ def get_login_url(session_id):
 
 def on_login(session_id, username):
   SESSION_TO_USERNAME[session_id] = username
+
+def submit_rank(username, rank):
+  body = {
+    "secret": MLN_SECRET,
+    "username": username,
+    "rank": rank,
+  }
+  url = f"{MLN_BASE_URL}{MLN_API_RANK}"
+  response = requests.post(url, json=body)
+  print(f"Submitted rank {rank} for {username}. Got response: {response.status_code}, {response.text}")
