@@ -11,7 +11,8 @@ This is a very early Proof of Concept of a server for the lego coastguard game
 
 ## Setup
 
-- Extract all of the files from the zip file (not including the root folder) into the [static](./static) directory
+- Extract all of the files from the zip file (not including the root folder)
+  into the [static](./static) directory
 - Run `uv sync`
 
 ## Usage
