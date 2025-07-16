@@ -4,4 +4,6 @@ __pycache__/
 
 static/*
 !static/.gitkeep
+
+mln_secret.py
 coastguard.db

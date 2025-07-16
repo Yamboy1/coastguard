@@ -2,36 +2,38 @@ from lxml import etree
 from lxml.builder import E
 
 import db
+import mln
 from db import LevelScore, GameInfo, Medals
 
-username = "USERNAME"
-token = "TOKEN"
-
 legowebsiteurl = "http://city.lego.com/Products/CoastGuard/Default.aspx"
-loginurl = "https://account.lego.com/Signin.aspx?ReturnUrl=http://city.lego.com/games/coastguard.aspx"
-getbadgeurl = "http://mln.lego.com"
 
 
-def gettoken() -> list[etree._Element]:
+def gettoken(session_id: str, username: str | None) -> list[etree._Element]:
+    if not username:
+        return [E.token(session_id)]
+
     db.init_scores(username)
     return [
-        E.token(token),
+        E.token(session_id),
         E.username(username),
     ]
 
 
-def getlinkurls() -> list[etree._Element]:
+def getlinkurls(session_id: str) -> list[etree._Element]:
     return [
         E.data(
             E.legowebsiteurl(legowebsiteurl),
-            E.loginurl(loginurl),
-            E.getbadgeurl(getbadgeurl),
+            E.loginurl(mln.get_login_url(session_id)),
+            E.getbadgeurl(mln.MLN_MAILBOX_URL),
         )
     ]
 
 
-def getscore() -> list[etree._Element]:
-    game_info = db.load_scores()
+def getscore(username: str | None) -> list[etree._Element]:
+    if not username:
+        game_info = GameInfo(username="", levels=[])
+    else:
+        game_info = db.load_scores(username)
 
     return [
         E.data(
@@ -50,7 +52,12 @@ def getscore() -> list[etree._Element]:
     ]
 
 
-def savescore(root: etree._Element) -> list[etree._Element]:
+def savescore(
+    session_id: str, username: str | None, root: etree._Element
+) -> list[etree._Element]:
+    if not username:
+        return []
+
     levels = [
         LevelScore(
             level=int(level.get("levelnumber", "")),
@@ -67,6 +74,8 @@ def savescore(root: etree._Element) -> list[etree._Element]:
         totalscore=int(root.findtext("data/totalscore", "")),
         levels=levels,
     )
+
     db.save_scores(game_info)
+    mln.submit_rank(session_id, game_info.currentrank)
 
     return []

@@ -1,13 +1,21 @@
-from flask import Flask, request, g
-from api import getlinkurls, getscore, gettoken, savescore
-import db
-from lego_crypt import Crypt
+import uuid
+
+from flask import Flask, g, make_response, redirect, request
 from lxml import etree
-from lxml.etree import Element
 from lxml.builder import E
+from lxml.etree import Element
+
+import db
+import mln
+import api
+from lego_crypt import Crypt
 
 app = Flask(__name__)
 db.init_app(app)
+
+
+def encrypt_body(body):
+    return Crypt.f_encrypt(body, Crypt.S_ENCRYPTION_KEY1)
 
 
 def encrypted_response(xml_string: str):
@@ -24,6 +32,15 @@ def encrypted_response(xml_string: str):
 
 @app.route("/InfoRequest.xml", methods=["POST"])
 def info_request():
+    # All requests must have the session_id cookie
+    session_id = request.cookies.get("session_id")
+    if session_id is None:
+        res = make_response()
+        res.set_cookie("session_id", value=str(uuid.uuid4()))
+        return res
+
+    username = mln.SESSION_TO_USERNAME.get(session_id)
+
     if "_GameName" not in request.form or "_Body" not in request.form:
         return "Missing required form fields", 401
 
@@ -42,13 +59,13 @@ def info_request():
 
     match method:
         case "gettoken":
-            elements = gettoken()
+            elements = api.gettoken(session_id, username)
         case "getlinkurls":
-            elements = getlinkurls()
+            elements = api.getlinkurls(session_id)
         case "getscore":
-            elements = getscore()
+            elements = api.getscore(username)
         case "savescore":
-            elements = savescore(root)
+            elements = api.savescore(session_id, username, root)
         case _:
             return "Invalid method attribute", 400
 
@@ -69,6 +86,8 @@ def strings():
     return app.send_static_file("strings.xml")
 
 
+@app.route("/index.html")
+@app.route("/")
 @app.route("/Launcher.html")
 def launcher():
     return app.send_static_file("Launcher.html")
@@ -82,6 +101,17 @@ def legocoastguards():
 @app.route("/loader.swf")
 def loader():
     return app.send_static_file("loader.swf")
+
+
+@app.route("/icon")
+def icon():
+    return app.send_static_file("icon.png")
+
+
+@app.route("/api/login")
+def on_mln_login():
+    mln.on_login(**request.args)
+    return redirect("/")
 
 
 @app.teardown_appcontext

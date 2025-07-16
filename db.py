@@ -59,7 +59,7 @@ def init_db_command():
     click.echo("Initialized the database.")
 
 
-def load_scores(username: str = "USERNAME") -> GameInfo:
+def load_scores(username: str) -> GameInfo:
     with get_db() as conn:
         data: sqlite3.Row | None = conn.execute(
             "SELECT * FROM data WHERE username = ?",
