@@ -2,7 +2,7 @@
 name = "coastguard-server"
 version = "0.1.0"
 requires-python = ">=3.10"
-dependencies = [
-    "flask>=3.1.1",
-    "requests>=2.32.4",
-]
+dependencies = ["flask>=3.1.1", "requests>=2.32.4", "lxml>=6.0.0"]
+
+[dependency-groups]
+dev = ["types-lxml>=2025.3.30"]
