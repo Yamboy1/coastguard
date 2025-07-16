@@ -1,6 +1,7 @@
 # My Lego Network Integration
 
 The Coast Guard game can integrate with My Lego Network for two purposes:
+
 - saving data
 - sending MLN rewards to the user based on in-game rank
 
@@ -26,7 +27,7 @@ Keep in mind that MLN will only give us an access token, not the username direct
 
 ## MLN API Endpoints
 
-### POST /api/coastguard/rank
+### POST /api/coast-guard/rank
 
 #### Request Body
 
@@ -43,4 +44,3 @@ Keep in mind that MLN will only give us an access token, not the username direct
 - 200 OK: Rewards will be sent if needed
 - 400 Malformed Request: Invalid secret or rank (must be between 1 and 5)
 - 401 Unauthorized: Unknown username or secret
-

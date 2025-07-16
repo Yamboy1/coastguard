@@ -9,7 +9,7 @@ COAST_GUARD_CLIENT_ID = "bf74c09a-09a0-4cfe-a00c-40755c6a8ad2"
 # MLN_BASE_URL = "https://mln.lcdruniverse.org"
 MLN_BASE_URL = "http://localhost:8000"
 MLN_MAILBOX_URL = f"{MLN_BASE_URL}/mln/private_view/default"
-MLN_API_RANK = "/api/coastguard/rank"  # see mln-docs/mln.md
+MLN_API_RANK = "/api/coast-guard/rank"  # see mln-docs/mln.md
 MLN_API_OAUTH = "/oauth/token"
 
 _SESSION_TO_TOKEN = {}
